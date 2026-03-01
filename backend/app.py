@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
+load_model_and_scaler()
 
 # Load model and scaler
 MODEL_PATH = 'model.pkl'
@@ -240,6 +241,5 @@ def model_info():
     })
 
 if __name__ == '__main__':
-    load_model_and_scaler()
     port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port)
