@@ -9,7 +9,6 @@ from sklearn.model_selection import train_test_split
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
-load_model_and_scaler()
 
 # Load model and scaler
 MODEL_PATH = 'model.pkl'
@@ -33,6 +32,9 @@ def load_model_and_scaler():
             print("Warning: Model files not found. Please run ML_Model.py first.")
     except Exception as e:
         print(f"Error loading model: {e}")
+        
+load_model_and_scaler()
+
 
 MODEL_FEATURES = ['height', 'weight', 'ap_hi', 'ap_lo', 'cholesterol', 'gluc', 'smoke', 'alco', 'gender', 'active', 'age', 'bmi']
 
