@@ -10,9 +10,10 @@ from sklearn.model_selection import train_test_split
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-# Load model and scaler
-MODEL_PATH = 'model.pkl'
-SCALER_PATH = 'scaler.pkl'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH = os.path.join(BASE_DIR, 'model.pkl')
+SCALER_PATH = os.path.join(BASE_DIR, 'scaler.pkl')
 DATA_PATH = os.path.join('data', 'cardio_train.csv')
 
 model = None
