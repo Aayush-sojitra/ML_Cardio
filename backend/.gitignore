@@ -5,13 +5,10 @@ __pycache__/
 *.so
 .Python
 venv/
+venv310/
 env/
 ENV/
 
-# Model files
-*.pkl
-model.pkl
-scaler.pkl
 
 # IDE
 .vscode/
